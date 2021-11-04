@@ -39,8 +39,37 @@ function generatePassword() {
   var isNumber = confirm("Will your password have numbers?")
   // prompt user for specialChars
   var isSpecial = confirm("Will your password have special characters?")
+
+  if(!isLowercase && !isUppercase && !isNumber && !isSpecial){
+    return generatePassword();
+  }
+
+  var generatedPassword = ""
+
+  var chosenChars = []
+  
+  if(isLowercase){
+    chosenChars.concat(lowercaseChars)
+  }
+
+  if(isUppercase){
+    chosenChars.concat(uppercaseChars)
+  }
+
+  if(isNumber){
+    chosenChars.concat(numbers)
+  }
+
+  if(isSpecial){
+    chosenChars.concat(specialChars)
+  }
   
   // use inputs to generate password
+  while(generatedPassword.length < passwordLength){
+    var index = Math.floor(Math.random * chosenChars.length)
+    generatedPassword += chosenChars[index]
+  }
+  return generatedPassword;
   // return the password from the generatePassword function
 }
 
