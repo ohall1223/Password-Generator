@@ -25,20 +25,20 @@ var specialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "="]
 // create generatePassword function
 function generatePassword() {
   // prompt user for length
-  var passwordLength = prompt("Please enter password length:")
+  var passwordLength = prompt("Please enter password length greater or equal to 8 and less than or equal to 128:")
   // error handling- is the number less than 8?
-  if(passwordLength < 8){
-    passwordLength = prompt("Please enter a number greater or equal to 8")
-  }
-  // error handling- is the number more than 128
-  if(passwordLength > 128){
-    passwordLength = prompt("Please enter a number less than or equal to 128")
+  while(passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("Please enter a number greater than or equal to 8 and less than or equal to 128")
   }
   
   // prompt user for lowercaseChars
+  var isLowercase = confirm("Will your password have lower case characters?")
   // prompt user for uppercaseChars
+  var isUppercase = confirm("Will your password have upper case characters?")
   // prompt user for numbers
+  var isNumber = confirm("Will your password have numbers?")
   // prompt user for specialChars
+  var isSpecial = confirm("Will your password have special characters?")
   
   // use inputs to generate password
   // return the password from the generatePassword function
