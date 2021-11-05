@@ -13,15 +13,15 @@
 - This page is for generating random passwords based upon user given inputs.
 
 ```md
-![alt text](./assets/screenshot1.png)
+![Screenshot of the page with a randomly generated password](./assets/screenshot1.png)
 ```
 
 ```md
-![alt text](./assets/screenshot2.png)
+![screenshot of the password length prompt](./assets/screenshot2.png)
 ```
 
 ```md
-![alt text](./assets/screenshot3.png)
+![screenshot of the lowercase letter prompt](./assets/screenshot3.png)
 ```
 
 ## Credits
