@@ -48,27 +48,34 @@ function generatePassword() {
 
   var chosenChars = []
   
-  if(isLowercase){
-    chosenChars.concat(lowercaseChars)
+  if(isLowercase){    
+    chosenChars = chosenChars.concat(lowercaseChars)
   }
 
   if(isUppercase){
-    chosenChars.concat(uppercaseChars)
+    chosenChars = chosenChars.concat(uppercaseChars)
   }
 
   if(isNumber){
-    chosenChars.concat(numbers)
-  }
-
-  if(isSpecial){
-    chosenChars.concat(specialChars)
+    chosenChars = chosenChars.concat(numbers)
   }
   
+
+  if(isSpecial){
+    chosenChars = chosenChars.concat(specialChars)
+  }
+  
+  console.log(chosenChars)
+
   // use inputs to generate password
   while(generatedPassword.length < passwordLength){
-    var index = Math.floor(Math.random * chosenChars.length)
+    var index = Math.floor(Math.random() * chosenChars.length)
+    console.log(index)
     generatedPassword += chosenChars[index]
   }
+
+  console.log(generatedPassword)
+
   return generatedPassword;
   // return the password from the generatePassword function
 }
